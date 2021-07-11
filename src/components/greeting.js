@@ -5,7 +5,7 @@ const greetingText = document.querySelector(".greeting__text");
 
 const CURRENT_USER = "current_user";
 
-const bgList = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+const bgList = ["1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG"];
 
 function saveUserName(name) {
   localStorage.setItem(CURRENT_USER, name);
@@ -40,7 +40,7 @@ function randomNum(min, max) {
 
 function paintBg() {
   const idx = randomNum(0, bgList.length);
-  greetingBox.style.backgroundImage = `url("../img/${bgList[idx]}")`;
+  greetingBox.style.backgroundImage = `url("../src/img/${bgList[idx]}")`;
 }
 
 function init() {
