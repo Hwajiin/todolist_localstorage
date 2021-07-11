@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>To do list</title>
+    <script src="src/components/time.js" defer></script>
+    <script src="src/components/greeting.js" defer></script>
+    <script src="src/components/weather.js" defer></script>
+    <script src="src/components/task.js" defer></script>
+  </head>
+  <body>
+    <section class="section info">
+      <div class="widget watch__box">
+        <div class="watch__circle">
+          <div class="watch__dot"></div>
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand sec-hand"></div>
+        </div>
+      </div>
+      <div class="widget day__box">
+        <span class="dayOfWeek">FRI</span>
+        <span class="day">17</span>
+      </div>
+      <div class="widget weather__box">
+        <span>Loading...</span>
+      </div>
+      <div class="widget greeting__box">
+        <form class="greeting__form">
+          <input
+            type="text"
+            class="greeting__input"
+            placeholder="What's your name?"
+          />
+        </form>
+        <span class="greeting__text">Hello</span>
+      </div>
+    </section>
+
+    <section class="section task">
+      <div class="task__container">
+        <div class="section__title">
+          <i class="fas fa-tasks"></i>
+          <span>Today's task</span>
+        </div>
+        <ul class="task__list todo__list"></ul>
+        <form class="task__form">
+          <input
+            type="text"
+            class="task__input"
+            placeholder="✏️  Add a new task"
+          />
+        </form>
+      </div>
+    </section>
+
+    <section class="section done">
+      <div class="done__container">
+        <div class="section__title">
+          <i class="far fa-check-circle"></i>
+          <span>Done</span>
+        </div>
+        <ul class="task__list done__list"></ul>
+      </div>
+      <div class="widget clock__box">
+        <span class="clock__text">00:00:00</span>
+      </div>
+    </section>
+  </body>
+</html>

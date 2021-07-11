@@ -1,0 +1,24 @@
+:root {
+  /* Color */
+  --bg-color: #3d3d48;
+  --widget-color: #1c1c20;
+  --white-color: #fff;
+  --yellow-color: #fdb219;
+  --sky-color: #96a7b9;
+  --pink-color: #e0cfc7;
+
+  /* font-size */
+  --font-size-sm: 11px;
+  --font-size-rg: 13px;
+  --font-size-lg: 24px;
+
+  /* border */
+  --radius-size: 10px;
+
+  /* space */
+  --base-margin: 1rem;
+
+  /* Shadow */
+  --base-box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}

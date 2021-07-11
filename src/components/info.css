@@ -1,0 +1,157 @@
+.info {
+  display: grid;
+  gap: var(--base-margin);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "watch day"
+    "weather weather"
+    "greeting greeting"
+    "greeting greeting";
+}
+
+/* watch__box */
+.watch__box {
+  grid-area: watch;
+}
+
+.watch__circle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border: 3px solid var(--sky-color);
+  border-radius: 50%;
+}
+
+.watch__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 25px;
+  height: 2px;
+  background-color: var(--white-color);
+  transform-origin: 100%;
+  border-radius: 5px;
+}
+
+.min-hand {
+  left: 11%;
+}
+
+.hour-hand {
+  width: 20px;
+  left: 18%;
+}
+
+.sec-hand {
+  background-color: var(--yellow-color);
+  width: 27px;
+  left: 8%;
+}
+
+/* day__box */
+
+.day__box {
+  grid-area: day;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.dayOfWeek {
+  font-size: var(--font-size-sm);
+  margin-bottom: 7px;
+}
+
+.day {
+  font-size: var(--font-size-lg);
+}
+
+/* Weather__box */
+.weather__box {
+  grid-area: weather;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather__info > span {
+  margin: 5px;
+}
+
+.location {
+  margin-top: 10px;
+  font-size: var(--font-size-sm);
+}
+
+/* Greeting__box */
+.greeting__box {
+  grid-area: greeting;
+  background-position: center;
+  background-size: cover;
+}
+
+.greeting__form {
+  display: none;
+}
+
+.greeting__input {
+  color: var(--white-color);
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 5px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--white-color);
+  transform: scale(0.8);
+  transition: all 0.3s ease-in;
+}
+
+.greeting__input:focus {
+  transform: scale(0.9);
+}
+
+.greeting__text {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: none;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+.greeting__text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  opacity: 0.3;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.greeting__text > div {
+  font-size: var(--font-size-rg);
+  margin-bottom: 10px;
+}
+
+.greeting__text > span {
+  font-size: var(--font-size-lg);
+  color: black;
+}

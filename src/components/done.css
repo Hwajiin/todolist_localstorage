@@ -1,0 +1,35 @@
+.done {
+  display: grid;
+  gap: var(--base-margin);
+  grid-template-columns: 1fr;
+  grid-template-rows: 6fr 1fr;
+  grid-template-areas:
+    "done"
+    "clock";
+}
+
+.done__container {
+  background-color: var(--widget-color);
+  border-radius: var(--radius-size);
+  overflow-y: scroll;
+  box-shadow: var(--base-box-shadow);
+}
+
+.clock__box {
+  position: relative;
+  color: var(--white-color);
+  letter-spacing: 1px;
+  overflow: hidden;
+  font-size: var(--font-size-rg);
+}
+
+.clock__box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 5px;
+  height: 80%;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: var(--yellow-color);
+}
