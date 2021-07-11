@@ -22,14 +22,3 @@
   overflow: hidden;
   font-size: var(--font-size-rg);
 }
-
-.clock__box::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 5px;
-  height: 80%;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: var(--yellow-color);
-}
