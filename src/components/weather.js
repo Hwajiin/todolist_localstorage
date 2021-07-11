@@ -2,18 +2,14 @@ const weatherBox = document.querySelector(".weather__box");
 
 const API_KEY = "7aa02b398d0775f9a369d3ad4650a1ef";
 
-function updateWeather() {
-  navigator.geolocation.getCurrentPosition((position) => {
-    const coords = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    };
+function onGeoOk(position) {
+  const lat = position.coords.latitude;
+  const lng = position.coords.longitude;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
 
-    async function getData() {
-      const res = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&appid=${API_KEY}&units=metric`
-      );
-      const data = await res.json();
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
       const temp = Math.round(data.main.temp);
       weatherBox.innerHTML = `
         <div class="weather__info">
@@ -22,13 +18,11 @@ function updateWeather() {
         </div>
         <span class="location">${data.name}</span>
       `;
-    }
-    getData();
-  });
+    });
 }
 
-function init() {
-  updateWeather();
+function onGeoError() {
+  alert(`Can't find you. No weather for you`);
 }
 
-init();
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
