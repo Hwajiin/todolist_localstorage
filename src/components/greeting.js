@@ -40,7 +40,7 @@ function randomNum(min, max) {
 
 function paintBg() {
   const idx = randomNum(0, bgList.length);
-  greetingBox.style.backgroundImage = `url("../../img/${bgList[idx]}")`;
+  greetingBox.style.backgroundImage = `url("../img/${bgList[idx]}")`;
 }
 
 function init() {
